@@ -6,15 +6,17 @@ import { useNavigate } from "react-router-dom";
 
 function Register() {
   const navigate = useNavigate();
+  
   const [phone, setPhone] = useState("");
   const [pass, setPass] = useState("");
+
   const { handleRegister, err } = useContext(AuthContext);
 
-  const handleRegisterUser = (phone, pass) => {
+  const handleRegisterUser = () => {
+    // Calling the handle register function
     const isSuccess = handleRegister(phone, pass);
-    console.log(isSuccess);
-    setPass("");
-    setPhone("");
+
+    // On successful registration navigate to login page
     if (isSuccess?.success) {
       navigate("/login");
     }
@@ -57,7 +59,7 @@ function Register() {
           )}
         </div>
         <button
-          onClick={() => handleRegisterUser(phone, pass)}
+          onClick={handleRegisterUser}
           className="bg-primary w-full py-3 rounded font-medium text-white_bg uppercase flex justify-center items-center gap-5"
         >
           Register

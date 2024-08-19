@@ -2,11 +2,25 @@ import { useContext, useState } from "react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import { AuthContext } from "../Provider/AuthProvider";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
+  const navigate = useNavigate();
+
   const [phone, setPhone] = useState("");
   const [pass, setPass] = useState("");
-  const { err } = useContext(AuthContext);
+
+  const { err, handleLogin, user } = useContext(AuthContext);
+console.log(user)
+  const handleLoginUser = () => {
+     // Calling the handle login function
+    const isSuccess = handleLogin(phone, pass);
+
+    // On successful login navigate to home page
+    if (isSuccess?.success) {
+      navigate("/");
+    }
+  }
 
   return (
     <div className="flex items-center gap-32 bg-black">
@@ -36,7 +50,7 @@ function Login() {
             <p>Password must be 6 characters.</p>
           )}
         </div>
-        <button className="bg-primary w-full py-3 rounded font-medium text-white_bg uppercase flex justify-center items-center gap-5">
+        <button onClick={handleLoginUser} className="bg-primary w-full py-3 rounded font-medium text-white_bg uppercase flex justify-center items-center gap-5">
           Login
         </button>
       </div>
