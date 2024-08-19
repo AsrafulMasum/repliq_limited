@@ -5,12 +5,14 @@ function Banner() {
     <section
       style={{
         backgroundImage:
-          "url(https://i.postimg.cc/Y9mvHQbs/banner2.jpg)",
+          "url(https://i.postimg.cc/2ygVcDMM/banner.jpg)",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
+        backgroundPosition: "0px"
       }}
       className='min-h-screen flex justify-center items-center'>
-      <div className='backdrop-blur-xl max-w-[1320px] w-full mx-auto py-36 px-20 rounded-xl flex justify-between items-center mt-28'>
+      <div className='backdrop-blur-lg max-w-[1320px] w-full mx-auto py-36 px-20 rounded-xl flex justify-between items-center mt-28 relative'>
+        <img className="absolute -right-16 top-20" src="./strock.png" alt="" />
 
         <div className="w-1/2">
           <h2 className='text-white_bg text-6xl font-bold leading-[132%]'>
