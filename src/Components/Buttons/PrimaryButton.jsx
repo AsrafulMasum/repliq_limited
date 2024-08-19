@@ -1,4 +1,4 @@
-import React from 'react'
+import PropTypes from "prop-types";
 
 function PrimaryButton({ text, style }) {
   return (
@@ -9,3 +9,8 @@ function PrimaryButton({ text, style }) {
 }
 
 export default PrimaryButton
+
+PrimaryButton.propTypes = {
+  text: PropTypes.string,
+  style: PropTypes.string,
+};
