@@ -10,6 +10,7 @@ function Login() {
     <div className='flex items-center gap-32 bg-black'>
       <img className='min-h-screen' src="./login.png" alt="" />
       <form className='w-full pr-80'>
+      <div id="recaptcha-container"></div>
         <label className='text-lg text-white_bg' htmlFor='ph'>
           Phone Number :
         </label>
@@ -20,7 +21,7 @@ function Login() {
           value={phone}
           onChange={setPhone}
         />
-        <button className='bg-primary mt-5 w-full py-3 rounded-md font-medium text-white_bg'>Send OTP via SMS</button>
+        <button className='bg-primary mt-5 w-full py-3 rounded font-medium text-white_bg'>Send OTP via SMS</button>
         <br />
         <br />
         <br />
@@ -31,7 +32,7 @@ function Login() {
         <br />
         <br />
         <OTPInput className="opt-container" value={OTP} onChange={setOTP} OTPLength={6} otpType="number" disabled={false}></OTPInput>
-        <button className='bg-primary mt-5 w-full py-3 rounded-md font-medium text-white_bg'>Verify OTP</button>
+        <button className='bg-primary mt-5 w-full py-3 rounded font-medium text-white_bg'>Verify OTP</button>
       </form>
     </div>
   )
