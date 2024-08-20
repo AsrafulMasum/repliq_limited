@@ -5,3 +5,7 @@
 .react-tel-input .form-control {
   @apply !w-full py-6 !text-base !bg-white_bg
 }
+
+*{
+  color: black;
+}
