@@ -1,10 +1,10 @@
-import Sidebar from "../Components/Navbar/Sidebar";
+
 
 function Dashboard() {
   return (
-    <>
-      <Sidebar />
-    </>
+    <div>
+
+    </div>
   );
 }
 

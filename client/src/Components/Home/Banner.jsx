@@ -15,7 +15,7 @@ function Banner() {
         <img className="absolute -right-16 top-20" src="./strock.png" alt="" />
 
         <div className="lg:w-1/2">
-          <h2 className='text-white_bg text-5xl lg:text-6xl font-bold leading-[132%] tracking-tighter'>
+          <h2 className='text-white_bg text-5xl lg:text-6xl font-bold leading-[132%] tracking-tighter lg:tracking-normal'>
           <span className='text-primary tracking-wide'>Manage</span> Your Store with <span className='text-primary tracking-wide'>Ease</span>
           </h2>
 
