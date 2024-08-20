@@ -8,10 +8,7 @@
     "stock": 120,
     "brand": "SoundPro",
     "rating": 4.5,
-    "images": [
-      "https://example.com/images/headphones-1.jpg",
-      "https://example.com/images/headphones-2.jpg"
-    ],
+    "img": "https://i.postimg.cc/50XpcN5b/highperformance-wireless-earbuds-with-charging-case.jpg",
     "tags": ["wireless", "bluetooth", "headphones", "electronics"],
     "dimensions": {
       "weight": "200g",
@@ -41,9 +38,9 @@
     "stock": 45,
     "brand": "VisionPlus",
     "rating": 4.8,
-    "images": [
-      "https://example.com/images/tv-1.jpg",
-      "https://example.com/images/tv-2.jpg"
+    "img": [
+      "https://example.com/img/tv-1.jpg",
+      "https://example.com/img/tv-2.jpg"
     ],
     "tags": ["4K", "smart-tv", "electronics"],
     "dimensions": {
@@ -74,9 +71,9 @@
     "stock": 200,
     "brand": "EcoWear",
     "rating": 4.2,
-    "images": [
-      "https://example.com/images/tshirt-1.jpg",
-      "https://example.com/images/tshirt-2.jpg"
+    "img": [
+      "https://example.com/img/tshirt-1.jpg",
+      "https://example.com/img/tshirt-2.jpg"
     ],
     "tags": ["organic", "cotton", "t-shirt", "clothing"],
     "dimensions": {
@@ -121,9 +118,9 @@
     "stock": 150,
     "brand": "EcoHydrate",
     "rating": 4.7,
-    "images": [
-      "https://example.com/images/bottle-1.jpg",
-      "https://example.com/images/bottle-2.jpg"
+    "img": [
+      "https://example.com/img/bottle-1.jpg",
+      "https://example.com/img/bottle-2.jpg"
     ],
     "tags": ["water bottle", "stainless steel", "accessories"],
     "dimensions": {
@@ -156,9 +153,9 @@
     "stock": 80,
     "brand": "WorkSmart",
     "rating": 4.3,
-    "images": [
-      "https://example.com/images/laptop-stand-1.jpg",
-      "https://example.com/images/laptop-stand-2.jpg"
+    "img": [
+      "https://example.com/img/laptop-stand-1.jpg",
+      "https://example.com/img/laptop-stand-2.jpg"
     ],
     "tags": ["laptop", "stand", "accessories"],
     "dimensions": {
@@ -189,9 +186,9 @@
     "stock": 60,
     "brand": "ComfortSeating",
     "rating": 4.6,
-    "images": [
-      "https://example.com/images/chair-1.jpg",
-      "https://example.com/images/chair-2.jpg"
+    "img": [
+      "https://example.com/img/chair-1.jpg",
+      "https://example.com/img/chair-2.jpg"
     ],
     "tags": ["chair", "office", "ergonomic", "furniture"],
     "dimensions": {
@@ -222,9 +219,9 @@
     "stock": 95,
     "brand": "FitWatch",
     "rating": 4.4,
-    "images": [
-      "https://example.com/images/smartwatch-1.jpg",
-      "https://example.com/images/smartwatch-2.jpg"
+    "img": [
+      "https://example.com/img/smartwatch-1.jpg",
+      "https://example.com/img/smartwatch-2.jpg"
     ],
     "tags": ["smartwatch", "fitness", "electronics"],
     "dimensions": {
@@ -255,9 +252,9 @@
     "stock": 120,
     "brand": "ChargePro",
     "rating": 4.5,
-    "images": [
-      "https://example.com/images/charging-pad-1.jpg",
-      "https://example.com/images/charging-pad-2.jpg"
+    "img": [
+      "https://example.com/img/charging-pad-1.jpg",
+      "https://example.com/img/charging-pad-2.jpg"
     ],
     "tags": ["wireless", "charging", "accessories"],
     "dimensions": {
@@ -288,9 +285,9 @@
     "stock": 150,
     "brand": "GamerPro",
     "rating": 4.7,
-    "images": [
-      "https://example.com/images/gaming-mouse-1.jpg",
-      "https://example.com/images/gaming-mouse-2.jpg"
+    "img": [
+      "https://example.com/img/gaming-mouse-1.jpg",
+      "https://example.com/img/gaming-mouse-2.jpg"
     ],
     "tags": ["gaming", "mouse", "electronics"],
     "dimensions": {
@@ -321,9 +318,9 @@
     "stock": 100,
     "brand": "QuickBoil",
     "rating": 4.3,
-    "images": [
-      "https://example.com/images/kettle-1.jpg",
-      "https://example.com/images/kettle-2.jpg"
+    "img": [
+      "https://example.com/img/kettle-1.jpg",
+      "https://example.com/img/kettle-2.jpg"
     ],
     "tags": ["kitchen", "kettle", "appliances"],
     "dimensions": {
@@ -354,9 +351,9 @@
     "stock": 75,
     "brand": "SoundFree",
     "rating": 4.6,
-    "images": [
-      "https://example.com/images/earbuds-1.jpg",
-      "https://example.com/images/earbuds-2.jpg"
+    "img": [
+      "https://example.com/img/earbuds-1.jpg",
+      "https://example.com/img/earbuds-2.jpg"
     ],
     "tags": ["earbuds", "noise-cancelling", "electronics"],
     "dimensions": {
@@ -387,9 +384,9 @@
     "stock": 65,
     "brand": "SecureCam",
     "rating": 4.4,
-    "images": [
-      "https://example.com/images/security-camera-1.jpg",
-      "https://example.com/images/security-camera-2.jpg"
+    "img": [
+      "https://example.com/img/security-camera-1.jpg",
+      "https://example.com/img/security-camera-2.jpg"
     ],
     "tags": ["security", "camera", "home"],
     "dimensions": {
@@ -420,9 +417,9 @@
     "stock": 40,
     "brand": "CookMaster",
     "rating": 4.5,
-    "images": [
-      "https://example.com/images/cookware-set-1.jpg",
-      "https://example.com/images/cookware-set-2.jpg"
+    "img": [
+      "https://example.com/img/cookware-set-1.jpg",
+      "https://example.com/img/cookware-set-2.jpg"
     ],
     "tags": ["cookware", "kitchen", "home"],
     "dimensions": {
@@ -448,9 +445,9 @@
     "stock": 30,
     "brand": "PhotoPro",
     "rating": 4.7,
-    "images": [
-      "https://example.com/images/dslr-camera-1.jpg",
-      "https://example.com/images/dslr-camera-2.jpg"
+    "img": [
+      "https://example.com/img/dslr-camera-1.jpg",
+      "https://example.com/img/dslr-camera-2.jpg"
     ],
     "tags": ["camera", "dslr", "electronics"],
     "dimensions": {
@@ -476,9 +473,9 @@
     "stock": 100,
     "brand": "SmileBright",
     "rating": 4.3,
-    "images": [
-      "https://example.com/images/toothbrush-1.jpg",
-      "https://example.com/images/toothbrush-2.jpg"
+    "img": [
+      "https://example.com/img/toothbrush-1.jpg",
+      "https://example.com/img/toothbrush-2.jpg"
     ],
     "tags": ["toothbrush", "electric", "personal care"],
     "dimensions": {
@@ -509,9 +506,9 @@
     "stock": 120,
     "brand": "TechKey",
     "rating": 4.4,
-    "images": [
-      "https://example.com/images/keyboard-mouse-1.jpg",
-      "https://example.com/images/keyboard-mouse-2.jpg"
+    "img": [
+      "https://example.com/img/keyboard-mouse-1.jpg",
+      "https://example.com/img/keyboard-mouse-2.jpg"
     ],
     "tags": ["keyboard", "mouse", "electronics"],
     "dimensions": {
@@ -542,9 +539,9 @@
     "stock": 90,
     "brand": "BassBoom",
     "rating": 4.5,
-    "images": [
-      "https://example.com/images/bluetooth-speaker-1.jpg",
-      "https://example.com/images/bluetooth-speaker-2.jpg"
+    "img": [
+      "https://example.com/img/bluetooth-speaker-1.jpg",
+      "https://example.com/img/bluetooth-speaker-2.jpg"
     ],
     "tags": ["speaker", "bluetooth", "electronics"],
     "dimensions": {
@@ -575,9 +572,9 @@
     "stock": 110,
     "brand": "BrightLite",
     "rating": 4.2,
-    "images": [
-      "https://example.com/images/desk-lamp-1.jpg",
-      "https://example.com/images/desk-lamp-2.jpg"
+    "img": [
+      "https://example.com/img/desk-lamp-1.jpg",
+      "https://example.com/img/desk-lamp-2.jpg"
     ],
     "tags": ["lamp", "led", "home"],
     "dimensions": {
@@ -608,9 +605,9 @@
     "stock": 140,
     "brand": "YogaPlus",
     "rating": 4.6,
-    "images": [
-      "https://example.com/images/yoga-mat-1.jpg",
-      "https://example.com/images/yoga-mat-2.jpg"
+    "img": [
+      "https://example.com/img/yoga-mat-1.jpg",
+      "https://example.com/img/yoga-mat-2.jpg"
     ],
     "tags": ["yoga", "fitness", "mat"],
     "dimensions": {
@@ -641,9 +638,9 @@
     "stock": 130,
     "brand": "RunFast",
     "rating": 4.5,
-    "images": [
-      "https://example.com/images/running-shoes-1.jpg",
-      "https://example.com/images/running-shoes-2.jpg"
+    "img": [
+      "https://example.com/img/running-shoes-1.jpg",
+      "https://example.com/img/running-shoes-2.jpg"
     ],
     "tags": ["shoes", "running", "footwear"],
     "dimensions": {

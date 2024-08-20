@@ -13,19 +13,16 @@ function UserDropdown() {
         </button>
         <ul
           tabIndex={0}
-          className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+          className="menu menu-sm dropdown-content bg-primary rounded-box z-[1] mt-3 w-52 p-4 shadow"
         >
           <li>
-            <a className="justify-between">
+            <a className="justify-between text-white_bg">
               Profile
-              <span className="badge">New</span>
+              <span className="badge">Admin</span>
             </a>
           </li>
-          <li>
-            <a>Settings</a>
-          </li>
           <li onClick={handleLogout}>
-            <a>Logout</a>
+            <a className="text-white_bg">Logout</a>
           </li>
         </ul>
       </div>

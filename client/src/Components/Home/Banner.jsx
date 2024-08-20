@@ -16,7 +16,7 @@ function Banner() {
 
         <div className="w-1/2">
           <h2 className='text-white_bg text-6xl font-bold leading-[132%]'>
-            Buy Anything <br /> in <span className='text-primary tracking-wide'>Trendify</span>
+          <span className='text-primary tracking-wide'>Manage</span> Your Store with <span className='text-primary tracking-wide'>Ease</span>
           </h2>
 
           <form className="flex items-center mt-8">
@@ -28,18 +28,18 @@ function Banner() {
 
           <div className="flex justify-between items-center pt-16">
             <div>
-              <h6 className="text-2xl font-bold leading-10 text-white_bg">1000+</h6>
-              <p className="font-medium leading-6 text-[#F4F5F7]">Products</p>
+              <h6 className="text-2xl font-bold leading-10 text-white_bg tracking-wide">100</h6>
+              <p className="font-medium leading-6 text-[#F4F5F7]">Total Orders</p>
             </div>
             <img src="./strock2.png" alt="" />
             <div>
-              <h6 className="text-2xl font-bold leading-10 text-white_bg">200+</h6>
-              <p className="font-medium leading-6 text-[#F4F5F7]">Happy Customers</p>
+              <h6 className="text-2xl font-bold leading-10 text-white_bg tracking-wide">20</h6>
+              <p className="font-medium leading-6 text-[#F4F5F7]">Pending Orders</p>
             </div>
             <img src="./strock2.png" alt="" />
             <div>
-              <h6 className="text-2xl font-bold leading-10 text-white_bg">100+</h6>
-              <p className="font-medium leading-6 text-[#F4F5F7]">Verified Users</p>
+              <h6 className="text-2xl font-bold leading-10 text-white_bg tracking-wide">$ 11,785</h6>
+              <p className="font-medium leading-6 text-[#F4F5F7]">Total Sales</p>
             </div>
           </div>
         </div>
