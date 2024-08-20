@@ -1,6 +1,10 @@
+import { useContext } from "react";
 import { FiUser } from "react-icons/fi";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 function UserDropdown() {
+  const { handleLogout } = useContext(AuthContext);
+  
   return (
     <div>
       <div className="dropdown dropdown-end">
@@ -20,7 +24,7 @@ function UserDropdown() {
           <li>
             <a>Settings</a>
           </li>
-          <li>
+          <li onClick={handleLogout}>
             <a>Logout</a>
           </li>
         </ul>

@@ -5,10 +5,10 @@ function Banner() {
     <section
       style={{
         backgroundImage:
-          "url(https://i.postimg.cc/2ygVcDMM/banner.jpg)",
+          "url(https://i.postimg.cc/y8nhmQW2/banner.png)",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
-        backgroundPosition: "0px"
+        backgroundPosition: "center"
       }}
       className='min-h-screen flex justify-center items-center'>
       <div className='backdrop-blur-lg max-w-[1320px] w-full mx-auto py-36 px-20 rounded-xl flex justify-between items-center mt-28 relative'>
@@ -16,7 +16,7 @@ function Banner() {
 
         <div className="w-1/2">
           <h2 className='text-white_bg text-6xl font-bold leading-[132%]'>
-            Buy Anything <br /> in <span className='text-primary'>Trendify</span>
+            Buy Anything <br /> in <span className='text-primary tracking-wide'>Trendify</span>
           </h2>
 
           <form className="flex items-center mt-8">

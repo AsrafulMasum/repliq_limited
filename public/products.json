@@ -1,0 +1,670 @@
+[
+  {
+    "id": 1,
+    "name": "Wireless Bluetooth Headphones",
+    "description": "High-quality wireless headphones with noise-cancellation and up to 20 hours of battery life.",
+    "price": 99.99,
+    "category": "Electronics",
+    "stock": 120,
+    "brand": "SoundPro",
+    "rating": 4.5,
+    "images": [
+      "https://example.com/images/headphones-1.jpg",
+      "https://example.com/images/headphones-2.jpg"
+    ],
+    "tags": ["wireless", "bluetooth", "headphones", "electronics"],
+    "dimensions": {
+      "weight": "200g",
+      "length": "15cm",
+      "width": "15cm",
+      "height": "5cm"
+    },
+    "variants": [
+      {
+        "color": "Black",
+        "price": 99.99,
+        "stock": 50
+      },
+      {
+        "color": "White",
+        "price": 99.99,
+        "stock": 70
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "4K Ultra HD Smart TV",
+    "description": "65-inch 4K Ultra HD Smart TV with built-in streaming apps and voice control.",
+    "price": 799.99,
+    "category": "Electronics",
+    "stock": 45,
+    "brand": "VisionPlus",
+    "rating": 4.8,
+    "images": [
+      "https://example.com/images/tv-1.jpg",
+      "https://example.com/images/tv-2.jpg"
+    ],
+    "tags": ["4K", "smart-tv", "electronics"],
+    "dimensions": {
+      "weight": "20kg",
+      "length": "145cm",
+      "width": "25cm",
+      "height": "85cm"
+    },
+    "variants": [
+      {
+        "size": "55-inch",
+        "price": 599.99,
+        "stock": 25
+      },
+      {
+        "size": "65-inch",
+        "price": 799.99,
+        "stock": 20
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Organic Cotton T-Shirt",
+    "description": "Soft and comfortable t-shirt made from 100% organic cotton.",
+    "price": 19.99,
+    "category": "Clothing",
+    "stock": 200,
+    "brand": "EcoWear",
+    "rating": 4.2,
+    "images": [
+      "https://example.com/images/tshirt-1.jpg",
+      "https://example.com/images/tshirt-2.jpg"
+    ],
+    "tags": ["organic", "cotton", "t-shirt", "clothing"],
+    "dimensions": {
+      "weight": "150g",
+      "length": "30cm",
+      "width": "20cm",
+      "height": "1cm"
+    },
+    "variants": [
+      {
+        "color": "Blue",
+        "size": "M",
+        "price": 19.99,
+        "stock": 50
+      },
+      {
+        "color": "Blue",
+        "size": "L",
+        "price": 19.99,
+        "stock": 50
+      },
+      {
+        "color": "White",
+        "size": "M",
+        "price": 19.99,
+        "stock": 50
+      },
+      {
+        "color": "White",
+        "size": "L",
+        "price": 19.99,
+        "stock": 50
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Stainless Steel Water Bottle",
+    "description": "Durable and eco-friendly water bottle with a leak-proof cap.",
+    "price": 25.99,
+    "category": "Accessories",
+    "stock": 150,
+    "brand": "EcoHydrate",
+    "rating": 4.7,
+    "images": [
+      "https://example.com/images/bottle-1.jpg",
+      "https://example.com/images/bottle-2.jpg"
+    ],
+    "tags": ["water bottle", "stainless steel", "accessories"],
+    "dimensions": {
+      "weight": "300g",
+      "length": "25cm",
+      "width": "7cm",
+      "height": "7cm"
+    },
+    "variants": [
+      {
+        "color": "Silver",
+        "size": "500ml",
+        "price": 25.99,
+        "stock": 80
+      },
+      {
+        "color": "Black",
+        "size": "750ml",
+        "price": 29.99,
+        "stock": 70
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Portable Laptop Stand",
+    "description": "Adjustable laptop stand that is lightweight and portable.",
+    "price": 39.99,
+    "category": "Accessories",
+    "stock": 80,
+    "brand": "WorkSmart",
+    "rating": 4.3,
+    "images": [
+      "https://example.com/images/laptop-stand-1.jpg",
+      "https://example.com/images/laptop-stand-2.jpg"
+    ],
+    "tags": ["laptop", "stand", "accessories"],
+    "dimensions": {
+      "weight": "500g",
+      "length": "30cm",
+      "width": "20cm",
+      "height": "2cm"
+    },
+    "variants": [
+      {
+        "color": "Gray",
+        "price": 39.99,
+        "stock": 40
+      },
+      {
+        "color": "Black",
+        "price": 39.99,
+        "stock": 40
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Ergonomic Office Chair",
+    "description": "Comfortable ergonomic office chair with lumbar support.",
+    "price": 149.99,
+    "category": "Furniture",
+    "stock": 60,
+    "brand": "ComfortSeating",
+    "rating": 4.6,
+    "images": [
+      "https://example.com/images/chair-1.jpg",
+      "https://example.com/images/chair-2.jpg"
+    ],
+    "tags": ["chair", "office", "ergonomic", "furniture"],
+    "dimensions": {
+      "weight": "15kg",
+      "length": "60cm",
+      "width": "60cm",
+      "height": "120cm"
+    },
+    "variants": [
+      {
+        "color": "Black",
+        "price": 149.99,
+        "stock": 30
+      },
+      {
+        "color": "Blue",
+        "price": 149.99,
+        "stock": 30
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Smartwatch with Fitness Tracker",
+    "description": "Smartwatch with heart rate monitor, GPS, and fitness tracking features.",
+    "price": 199.99,
+    "category": "Electronics",
+    "stock": 95,
+    "brand": "FitWatch",
+    "rating": 4.4,
+    "images": [
+      "https://example.com/images/smartwatch-1.jpg",
+      "https://example.com/images/smartwatch-2.jpg"
+    ],
+    "tags": ["smartwatch", "fitness", "electronics"],
+    "dimensions": {
+      "weight": "50g",
+      "length": "5cm",
+      "width": "5cm",
+      "height": "1cm"
+    },
+    "variants": [
+      {
+        "color": "Black",
+        "price": 199.99,
+        "stock": 50
+      },
+      {
+        "color": "Pink",
+        "price": 199.99,
+        "stock": 45
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Wireless Charging Pad",
+    "description": "Fast wireless charging pad compatible with all Qi-enabled devices.",
+    "price": 29.99,
+    "category": "Accessories",
+    "stock": 120,
+    "brand": "ChargePro",
+    "rating": 4.5,
+    "images": [
+      "https://example.com/images/charging-pad-1.jpg",
+      "https://example.com/images/charging-pad-2.jpg"
+    ],
+    "tags": ["wireless", "charging", "accessories"],
+    "dimensions": {
+      "weight": "100g",
+      "length": "10cm",
+      "width": "10cm",
+      "height": "1cm"
+    },
+    "variants": [
+      {
+        "color": "Black",
+        "price": 29.99,
+        "stock": 60
+      },
+      {
+        "color": "White",
+        "price": 29.99,
+        "stock": 60
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Gaming Mouse",
+    "description": "High-precision gaming mouse with customizable RGB lighting.",
+    "price": 49.99,
+    "category": "Electronics",
+    "stock": 150,
+    "brand": "GamerPro",
+    "rating": 4.7,
+    "images": [
+      "https://example.com/images/gaming-mouse-1.jpg",
+      "https://example.com/images/gaming-mouse-2.jpg"
+    ],
+    "tags": ["gaming", "mouse", "electronics"],
+    "dimensions": {
+      "weight": "150g",
+      "length": "12cm",
+      "width": "7cm",
+      "height": "4cm"
+    },
+    "variants": [
+      {
+        "color": "Black",
+        "price": 49.99,
+        "stock": 80
+      },
+      {
+        "color": "Red",
+        "price": 49.99,
+        "stock": 70
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Electric Kettle",
+    "description": "Fast-boil electric kettle with auto shut-off feature.",
+    "price": 39.99,
+    "category": "Home Appliances",
+    "stock": 100,
+    "brand": "QuickBoil",
+    "rating": 4.3,
+    "images": [
+      "https://example.com/images/kettle-1.jpg",
+      "https://example.com/images/kettle-2.jpg"
+    ],
+    "tags": ["kitchen", "kettle", "appliances"],
+    "dimensions": {
+      "weight": "1kg",
+      "length": "20cm",
+      "width": "15cm",
+      "height": "25cm"
+    },
+    "variants": [
+      {
+        "color": "Stainless Steel",
+        "price": 39.99,
+        "stock": 50
+      },
+      {
+        "color": "Black",
+        "price": 39.99,
+        "stock": 50
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Noise-Cancelling Earbuds",
+    "description": "In-ear noise-cancelling earbuds with wireless charging case.",
+    "price": 149.99,
+    "category": "Electronics",
+    "stock": 75,
+    "brand": "SoundFree",
+    "rating": 4.6,
+    "images": [
+      "https://example.com/images/earbuds-1.jpg",
+      "https://example.com/images/earbuds-2.jpg"
+    ],
+    "tags": ["earbuds", "noise-cancelling", "electronics"],
+    "dimensions": {
+      "weight": "50g",
+      "length": "2cm",
+      "width": "2cm",
+      "height": "3cm"
+    },
+    "variants": [
+      {
+        "color": "White",
+        "price": 149.99,
+        "stock": 40
+      },
+      {
+        "color": "Black",
+        "price": 149.99,
+        "stock": 35
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Smart Home Security Camera",
+    "description": "1080p smart home security camera with motion detection and night vision.",
+    "price": 89.99,
+    "category": "Home Security",
+    "stock": 65,
+    "brand": "SecureCam",
+    "rating": 4.4,
+    "images": [
+      "https://example.com/images/security-camera-1.jpg",
+      "https://example.com/images/security-camera-2.jpg"
+    ],
+    "tags": ["security", "camera", "home"],
+    "dimensions": {
+      "weight": "200g",
+      "length": "10cm",
+      "width": "7cm",
+      "height": "7cm"
+    },
+    "variants": [
+      {
+        "color": "White",
+        "price": 89.99,
+        "stock": 35
+      },
+      {
+        "color": "Black",
+        "price": 89.99,
+        "stock": 30
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Stainless Steel Cookware Set",
+    "description": "10-piece stainless steel cookware set with non-stick coating.",
+    "price": 199.99,
+    "category": "Home & Kitchen",
+    "stock": 40,
+    "brand": "CookMaster",
+    "rating": 4.5,
+    "images": [
+      "https://example.com/images/cookware-set-1.jpg",
+      "https://example.com/images/cookware-set-2.jpg"
+    ],
+    "tags": ["cookware", "kitchen", "home"],
+    "dimensions": {
+      "weight": "10kg",
+      "length": "60cm",
+      "width": "40cm",
+      "height": "30cm"
+    },
+    "variants": [
+      {
+        "color": "Silver",
+        "price": 199.99,
+        "stock": 40
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Digital SLR Camera",
+    "description": "24.1 MP digital SLR camera with interchangeable lenses.",
+    "price": 599.99,
+    "category": "Electronics",
+    "stock": 30,
+    "brand": "PhotoPro",
+    "rating": 4.7,
+    "images": [
+      "https://example.com/images/dslr-camera-1.jpg",
+      "https://example.com/images/dslr-camera-2.jpg"
+    ],
+    "tags": ["camera", "dslr", "electronics"],
+    "dimensions": {
+      "weight": "1.2kg",
+      "length": "15cm",
+      "width": "10cm",
+      "height": "8cm"
+    },
+    "variants": [
+      {
+        "color": "Black",
+        "price": 599.99,
+        "stock": 30
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Electric Toothbrush",
+    "description": "Rechargeable electric toothbrush with multiple cleaning modes.",
+    "price": 49.99,
+    "category": "Personal Care",
+    "stock": 100,
+    "brand": "SmileBright",
+    "rating": 4.3,
+    "images": [
+      "https://example.com/images/toothbrush-1.jpg",
+      "https://example.com/images/toothbrush-2.jpg"
+    ],
+    "tags": ["toothbrush", "electric", "personal care"],
+    "dimensions": {
+      "weight": "200g",
+      "length": "25cm",
+      "width": "3cm",
+      "height": "3cm"
+    },
+    "variants": [
+      {
+        "color": "White",
+        "price": 49.99,
+        "stock": 50
+      },
+      {
+        "color": "Blue",
+        "price": 49.99,
+        "stock": 50
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Wireless Keyboard and Mouse Combo",
+    "description": "Compact wireless keyboard and mouse combo with long battery life.",
+    "price": 39.99,
+    "category": "Electronics",
+    "stock": 120,
+    "brand": "TechKey",
+    "rating": 4.4,
+    "images": [
+      "https://example.com/images/keyboard-mouse-1.jpg",
+      "https://example.com/images/keyboard-mouse-2.jpg"
+    ],
+    "tags": ["keyboard", "mouse", "electronics"],
+    "dimensions": {
+      "weight": "500g",
+      "length": "45cm",
+      "width": "15cm",
+      "height": "3cm"
+    },
+    "variants": [
+      {
+        "color": "Black",
+        "price": 39.99,
+        "stock": 60
+      },
+      {
+        "color": "White",
+        "price": 39.99,
+        "stock": 60
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "name": "Bluetooth Speaker",
+    "description": "Portable Bluetooth speaker with powerful sound and deep bass.",
+    "price": 79.99,
+    "category": "Electronics",
+    "stock": 90,
+    "brand": "BassBoom",
+    "rating": 4.5,
+    "images": [
+      "https://example.com/images/bluetooth-speaker-1.jpg",
+      "https://example.com/images/bluetooth-speaker-2.jpg"
+    ],
+    "tags": ["speaker", "bluetooth", "electronics"],
+    "dimensions": {
+      "weight": "1kg",
+      "length": "20cm",
+      "width": "10cm",
+      "height": "8cm"
+    },
+    "variants": [
+      {
+        "color": "Black",
+        "price": 79.99,
+        "stock": 50
+      },
+      {
+        "color": "Blue",
+        "price": 79.99,
+        "stock": 40
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "name": "LED Desk Lamp",
+    "description": "Adjustable LED desk lamp with touch control and USB charging port.",
+    "price": 29.99,
+    "category": "Home",
+    "stock": 110,
+    "brand": "BrightLite",
+    "rating": 4.2,
+    "images": [
+      "https://example.com/images/desk-lamp-1.jpg",
+      "https://example.com/images/desk-lamp-2.jpg"
+    ],
+    "tags": ["lamp", "led", "home"],
+    "dimensions": {
+      "weight": "800g",
+      "length": "35cm",
+      "width": "15cm",
+      "height": "10cm"
+    },
+    "variants": [
+      {
+        "color": "White",
+        "price": 29.99,
+        "stock": 60
+      },
+      {
+        "color": "Black",
+        "price": 29.99,
+        "stock": 50
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "name": "Yoga Mat",
+    "description": "Eco-friendly yoga mat with non-slip surface and extra cushioning.",
+    "price": 35.99,
+    "category": "Fitness",
+    "stock": 140,
+    "brand": "YogaPlus",
+    "rating": 4.6,
+    "images": [
+      "https://example.com/images/yoga-mat-1.jpg",
+      "https://example.com/images/yoga-mat-2.jpg"
+    ],
+    "tags": ["yoga", "fitness", "mat"],
+    "dimensions": {
+      "weight": "1.5kg",
+      "length": "180cm",
+      "width": "60cm",
+      "height": "1cm"
+    },
+    "variants": [
+      {
+        "color": "Green",
+        "price": 35.99,
+        "stock": 70
+      },
+      {
+        "color": "Purple",
+        "price": 35.99,
+        "stock": 70
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "name": "Running Shoes",
+    "description": "Lightweight running shoes with breathable mesh upper and cushioned sole.",
+    "price": 79.99,
+    "category": "Footwear",
+    "stock": 130,
+    "brand": "RunFast",
+    "rating": 4.5,
+    "images": [
+      "https://example.com/images/running-shoes-1.jpg",
+      "https://example.com/images/running-shoes-2.jpg"
+    ],
+    "tags": ["shoes", "running", "footwear"],
+    "dimensions": {
+      "weight": "500g",
+      "length": "30cm",
+      "width": "10cm",
+      "height": "10cm"
+    },
+    "variants": [
+      {
+        "color": "Blue",
+        "size": "9",
+        "price": 79.99,
+        "stock": 50
+      },
+      {
+        "color": "Black",
+        "size": "10",
+        "price": 79.99,
+        "stock": 80
+      }
+    ]
+  }
+]
