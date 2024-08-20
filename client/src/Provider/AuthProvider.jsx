@@ -1,16 +1,18 @@
 import { createContext, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { toast } from "react-toastify";
+import useAxiosPublic from "../Hooks/useAxiosPublic";
 
 export const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
+  const axiosPublic = useAxiosPublic();
   const [user, setUser] = useState(null);
   const [err, setErr] = useState("");
   const [loading, setLoading] = useState(false);
 
   // handle register
-  const handleRegister = (phone, pass) => {
+  const handleRegister = async (phone, pass) => {
     setErr(false);
 
     // Validate password length
@@ -36,28 +38,21 @@ const AuthProvider = ({ children }) => {
       pass,
     };
 
-    // Retrieve existing users or initialize an empty array
-    let allUsers = JSON.parse(localStorage.getItem("users")) || [];
+    // Stroing user data in DB
+    try {
+      const res = await axiosPublic.post("/register", newUser);
 
-    // Check if the phone number already exists
-    const userExists = allUsers.some((user) => user.phone === formattedPh);
-    if (userExists) {
-      toast.error("User with this phone number already exists!");
-      setErr("User with this phone number already exists!");
-      return;
+      // Indicate success
+      toast.success(res?.data?.message);
+      return { success: true };
+    } catch (error) {
+      // Indicate error
+      toast.error(error?.response?.data?.message);
     }
-
-    // Add the new user
-    allUsers.push(newUser);
-    localStorage.setItem("users", JSON.stringify(allUsers));
-
-    // Indicate success
-    toast.success("User registered successfully!");
-    return { success: true };
   };
 
   // handle login
-  const handleLogin = (phone, pass) => {
+  const handleLogin = async (phone, pass) => {
     // Validate password length
     if (!pass) {
       toast.error("Please insert a password!");
@@ -75,49 +70,78 @@ const AuthProvider = ({ children }) => {
     // Format the phone number
     const formattedPh = "+" + phone;
 
-    // Retrieve existing users or initialize an empty array
-    let allUsers = JSON.parse(localStorage.getItem("users")) || [];
+    // Create user object
+    const user = {
+      phone: formattedPh,
+      pass,
+    };
 
-    // Check if the phone number already exists
-    const userExists = allUsers.filter((user) => user.phone === formattedPh);
+    // Sending request for login
+    try {
+      const res = await axiosPublic.post("/login", user);
 
-    // Check if the user exists
-    if (userExists?.length === 0) {
-      toast.error("Please create an account!");
-      setErr("Please create an account!");
-      return;
-    }
-    // Validate password
-    if (pass === userExists[0]?.pass) {
-      // Add current user
-      localStorage.setItem("currentUser", JSON.stringify(userExists));
-
-      // Set current user
-      setUser(userExists[0]);
+      // Calling set user id to local storage
+      setUserIdToLS(res.data.user._id);
 
       // Indicate success
-      toast.success("Login successful!");
+      toast.success(res?.data?.message);
       return { success: true };
-    } else {
-      toast.error("Incorrect password!");
-      setErr("Incorrect password!");
-      return;
+    } catch (error) {
+      // Indicate error
+      toast.error(error?.response?.data?.message);
     }
   };
+
+  // Initializing set user id to local storage
+  const setUserIdToLS = (id) => {
+    localStorage.setItem("userId", id);
+    getUser();
+  };
+
+  // Getting user fron DB
+  const getUser = async () => {
+    const userId = localStorage.getItem("userId");
+    if (userId) {
+      const res = await axiosPublic.get(`/user/${userId}`);
+      setUser(res?.data);
+    }
+  };
+
+  // Calling getUser function
+  useEffect(() => {
+    getUser();
+  }, []);
 
   // handle logout
   const handleLogout = () => {
     setUser(null);
 
     // Removing current user from local storage
-    localStorage.removeItem("currentUser")
+    localStorage.removeItem("userId");
   };
 
-  // Set user
+  // Set user while login
   useEffect(() => {
-    let currentUser = JSON.parse(localStorage.getItem("currentUser")) || [];
-    setUser(currentUser[0]);
-  }, []);
+    if (user) {
+      axiosPublic
+        .post("/jwt", user, {
+          withCredentials: true,
+        })
+        .then(() => {})
+        .catch((err) => {
+          console.log(err);
+        });
+    } else {
+      axiosPublic
+        .post("/logout", user, {
+          withCredentials: true,
+        })
+        .then(() => {})
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+  }, [axiosPublic, user]);
 
   // Creating object of data
   const authData = {

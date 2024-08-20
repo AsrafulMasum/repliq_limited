@@ -12,10 +12,10 @@ function Register() {
 
   const { handleRegister, err } = useContext(AuthContext);
 
-  const handleRegisterUser = () => {
+  const handleRegisterUser = async () => {
     // Calling the handle register function
-    const isSuccess = handleRegister(phone, pass);
-
+    const isSuccess = await handleRegister(phone, pass);
+    
     // On successful registration navigate to login page
     if (isSuccess?.success) {
       navigate("/login");

@@ -12,9 +12,9 @@ function Login() {
 
   const { err, handleLogin } = useContext(AuthContext);
 
-  const handleLoginUser = () => {
+  const handleLoginUser = async () => {
     // Calling the handle login function
-    const isSuccess = handleLogin(phone, pass);
+    const isSuccess = await handleLogin(phone, pass);
 
     // On successful login navigate to home page
     if (isSuccess?.success) {
