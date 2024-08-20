@@ -21,8 +21,6 @@ app.use(cookieParser());
 
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.g9v99.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
 
-
-
 const client = new MongoClient(uri, {
   serverApi: {
     version: ServerApiVersion.v1,
@@ -44,6 +42,26 @@ dbConnect();
 
 const database = client.db("TrendifyDB");
 const usersCollections = database.collection("usersDB");
+const productCollections = database.collection("productsDB");
+
+app.get("/", (req, res) => {
+  res.send("server is running data will be appear soon...");
+});
+
+// Handling error for invalid url
+app.all("*", (req, res, next) => {
+  const err = new Error(`The requested url is invalid [${req.url}].`);
+  err.status = 404;
+  next(err);
+});
+
+// Handling error for unexpected error
+app.use((err, req, res, next) => {
+  res.status(err.status || 500).json({
+    message: err.message,
+    errors: err.errors,
+  });
+});
 
 // jwt api route
 app.post("/jwt", (req, res) => {
@@ -66,18 +84,16 @@ app.post("/logout", (req, res) => {
   res.clearCookie("token", { maxAge: 0 }).send({ success: true });
 });
 
-app.get("/", (req, res) => {
-  res.send("server is running data will be appear soon..."); 
-});
-
 // User registration route
 app.post("/register", async (req, res) => {
   const { phone, pass } = req.body;
-  console.log(phone, pass)
+  console.log(phone, pass);
 
   // Validation
   if (!phone || !pass) {
-    return res.status(400).json({ message: "Phone and password are required!" });
+    return res
+      .status(400)
+      .json({ message: "Phone and password are required!" });
   }
 
   try {
@@ -95,7 +111,7 @@ app.post("/register", async (req, res) => {
     const newUser = {
       phone,
       password: hashedPassword,
-      createdAt: new Date()
+      createdAt: new Date(),
     };
 
     // Insert user into database
@@ -114,7 +130,9 @@ app.post("/login", async (req, res) => {
 
   // Validation
   if (!phone || !pass) {
-    return res.status(400).json({ message: "Phone and password are required!" });
+    return res
+      .status(400)
+      .json({ message: "Phone and password are required!" });
   }
 
   try {
@@ -130,7 +148,7 @@ app.post("/login", async (req, res) => {
       return res.status(400).json({ message: "Invalid credentials!" });
     }
 
-    res.status(200).json({user, message: "Logged in successfully." });
+    res.status(200).json({ user, message: "Logged in successfully." });
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Internal Server Error!" });
@@ -140,7 +158,7 @@ app.post("/login", async (req, res) => {
 // Provide user data route
 app.get("/user/:id", async (req, res) => {
   const userId = req.params.id;
-  
+
   try {
     // Checking if the user exists
     const query = { _id: new ObjectId(userId) };
@@ -152,10 +170,24 @@ app.get("/user/:id", async (req, res) => {
 
     res.status(200).json(result);
   } catch (error) {
-    console.error( error);
+    console.error(error);
     res.status(500).json({ message: "Internal Server Error" });
   }
-})
+});
+
+// Provide products data route
+app.get("/products", async (req, res) => {
+  try {
+    // Fetch all products from the collection
+    const products = await productCollections.find().toArray();
+    res.status(200).json(products);
+  } catch (error) {
+    console.error(error);
+    res
+      .status(500)
+      .json({ error: "An error occurred while fetching products" });
+  }
+});
 
 app.listen(port, () => {
   console.log(`server is running on port: ${port}`);
