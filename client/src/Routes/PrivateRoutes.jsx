@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
-import Loading from "../Pages/Loading/Loading";
 import { Navigate, useLocation } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
+import Loading from "../Components/Loading/Loading";
 
 const PrivateRoutes = ({ children }) => {
   const location = useLocation();

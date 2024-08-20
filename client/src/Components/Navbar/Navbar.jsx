@@ -9,8 +9,8 @@ function Navbar() {
   const { user } = useContext(AuthContext);
 
   return (
-    <div className="fixed w-full  bg-white_bg">
-      <nav className="max-w-[1320px] mx-auto flex justify-between items-center py-4">
+    <div className="fixed w-full  bg-white_bg z-50">
+      <nav className="max-w-[1320px] mx-4 min-[1320px]:mx-auto flex justify-between items-center py-4">
         <Link to="/" className="flex items-center gap-5">
           <img className="w-16" src="./favicon.png" alt="logo" />
           <h2 className="text-xl">Trendify</h2>
@@ -42,6 +42,7 @@ function Navbar() {
             </div>
           )}
         </>
+
       </nav>
     </div>
   );

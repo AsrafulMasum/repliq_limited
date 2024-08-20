@@ -48,21 +48,6 @@ app.get("/", (req, res) => {
   res.send("server is running data will be appear soon...");
 });
 
-// Handling error for invalid url
-app.all("*", (req, res, next) => {
-  const err = new Error(`The requested url is invalid [${req.url}].`);
-  err.status = 404;
-  next(err);
-});
-
-// Handling error for unexpected error
-app.use((err, req, res, next) => {
-  res.status(err.status || 500).json({
-    message: err.message,
-    errors: err.errors,
-  });
-});
-
 // jwt api route
 app.post("/jwt", (req, res) => {
   const user = req.body;
@@ -187,6 +172,21 @@ app.get("/products", async (req, res) => {
       .status(500)
       .json({ error: "An error occurred while fetching products" });
   }
+});
+
+// Handling error for invalid url
+app.all("*", (req, res, next) => {
+  const err = new Error(`The requested url is invalid [${req.url}].`);
+  err.status = 404;
+  next(err);
+});
+
+// Handling error for unexpected error
+app.use((err, req, res, next) => {
+  res.status(err.status || 500).json({
+    message: err.message,
+    errors: err.errors,
+  });
 });
 
 app.listen(port, () => {
