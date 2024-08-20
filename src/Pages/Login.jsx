@@ -10,8 +10,8 @@ function Login() {
   const [phone, setPhone] = useState("");
   const [pass, setPass] = useState("");
 
-  const { err, handleLogin, user } = useContext(AuthContext);
-console.log(user)
+  const { err, handleLogin } = useContext(AuthContext);
+
   const handleLoginUser = () => {
      // Calling the handle login function
     const isSuccess = handleLogin(phone, pass);

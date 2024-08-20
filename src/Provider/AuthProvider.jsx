@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { toast } from "react-toastify";
 
@@ -56,6 +56,7 @@ const AuthProvider = ({ children }) => {
     return { success: true };
   };
 
+  // handle login
   const handleLogin = (phone, pass) => {
     // Validate password length
     if (!pass) {
@@ -92,7 +93,7 @@ const AuthProvider = ({ children }) => {
       localStorage.setItem("currentUser", JSON.stringify(userExists));
 
       // Set current user
-      setUser(userExists);
+      setUser(userExists[0]);
 
       // Indicate success
       toast.success("Login successful!");
@@ -104,6 +105,21 @@ const AuthProvider = ({ children }) => {
     }
   };
 
+  // handle logout
+  const handleLogout = () => {
+    setUser(null);
+
+    // Removing current user from local storage
+    localStorage.removeItem("currentUser")
+  };
+
+  // Set user
+  useEffect(() => {
+    let currentUser = JSON.parse(localStorage.getItem("currentUser")) || [];
+    setUser(currentUser[0]);
+  }, []);
+
+  // Creating object of data
   const authData = {
     user,
     err,
@@ -111,6 +127,7 @@ const AuthProvider = ({ children }) => {
     setLoading,
     handleRegister,
     handleLogin,
+    handleLogout,
   };
 
   return (
