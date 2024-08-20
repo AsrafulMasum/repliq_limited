@@ -9,16 +9,18 @@ const AuthProvider = ({ children }) => {
   const axiosPublic = useAxiosPublic();
   const [user, setUser] = useState(null);
   const [err, setErr] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   // handle register
   const handleRegister = async (phone, pass) => {
+    setLoading(true);
     setErr(false);
 
     // Validate password length
     if (pass?.length <= 5) {
       toast.error("Password must be at least 6 characters!");
       setErr("Password must be at least 6 characters!");
+      setLoading(false);
       return;
     }
 
@@ -26,6 +28,7 @@ const AuthProvider = ({ children }) => {
     if (!phone || phone?.length < 10) {
       toast.error("Please provide a valid phone number!");
       setErr("Please provide a valid phone number!");
+      setLoading(false);
       return;
     }
 
@@ -38,14 +41,16 @@ const AuthProvider = ({ children }) => {
       pass,
     };
 
-    // Stroing user data in DB
+    // Storing user data in DB
     try {
       const res = await axiosPublic.post("/register", newUser);
+      setLoading(false);
 
       // Indicate success
       toast.success(res?.data?.message);
       return { success: true };
     } catch (error) {
+      setLoading(false);
       // Indicate error
       toast.error(error?.response?.data?.message);
     }
@@ -53,10 +58,13 @@ const AuthProvider = ({ children }) => {
 
   // handle login
   const handleLogin = async (phone, pass) => {
+    setLoading(true);
+
     // Validate password length
     if (!pass) {
       toast.error("Please insert a password!");
       setErr("Please insert a password!");
+      setLoading(false);
       return;
     }
 
@@ -64,6 +72,7 @@ const AuthProvider = ({ children }) => {
     if (!phone || phone?.length < 10) {
       toast.error("Please provide a valid phone number!");
       setErr("Please provide a valid phone number!");
+      setLoading(false);
       return;
     }
 
@@ -80,34 +89,37 @@ const AuthProvider = ({ children }) => {
     try {
       const res = await axiosPublic.post("/login", user);
 
-      // Calling set user id to local storage
-      setUserIdToLS(res.data.user._id);
+      // Store user id to local storage
+      localStorage.setItem("userId", res.data.user._id);
+
+      await getUser();
 
       // Indicate success
       toast.success(res?.data?.message);
       return { success: true };
     } catch (error) {
+      setLoading(false);
       // Indicate error
       toast.error(error?.response?.data?.message);
     }
   };
 
-  // Initializing set user id to local storage
-  const setUserIdToLS = (id) => {
-    localStorage.setItem("userId", id);
-    getUser();
-  };
-
-  // Getting user fron DB
+  // Getting user from DB
   const getUser = async () => {
     const userId = localStorage.getItem("userId");
+
     if (userId) {
-      const res = await axiosPublic.get(`/user/${userId}`);
-      setUser(res?.data);
+      try {
+        const res = await axiosPublic.get(`/user/${userId}`);
+        setUser(res?.data);
+      } catch (error) {
+        console.error("Failed to fetch user:", error);
+      }
     }
+    setLoading(false);
   };
 
-  // Calling getUser function
+  // Call getUser function when the component mounts
   useEffect(() => {
     getUser();
   }, []);
