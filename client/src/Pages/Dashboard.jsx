@@ -16,9 +16,9 @@ function Dashboard() {
   const { data: product } = useLoadSecureData(url);
 
   return (
-    <div className="flex items-center gap-10 xl:gap-20 overflow-hidden">
+    <div className="flex items-center overflow-hidden">
       {/* sidebar */}
-      <div className="min-h-screen w-80 bg-primary hidden md:flex flex-col justify-between">
+      <div className="min-h-screen min-w-48 w-80 bg-primary hidden lg:flex flex-col justify-between">
         <ul className="flex flex-col justify-center pt-28">
           <li
             className={`text-lg font-medium py-5 pl-10 ${
@@ -91,7 +91,7 @@ function Dashboard() {
       </div>
 
       <div
-        className={`mt-28 w-full mr-10 xl:mr-20 ${
+        className={`mt-20 w-full xl:mx-10 ${
           location?.pathname === "/dashboard" ? "block" : "hidden"
         }`}
       >
@@ -99,7 +99,7 @@ function Dashboard() {
       </div>
 
       <div
-        className={`mt-28 w-full ${
+        className={`mt-28 w-full md:mx-10 xl:mx-20 ${
           location?.pathname === "/products" ? "block" : "hidden"
         }`}
       >
@@ -107,7 +107,7 @@ function Dashboard() {
       </div>
 
       <div
-        className={`mt-28 ${
+        className={`mt-28 md:mx-10 xl:mx-20 ${
           location?.pathname === `/product/${id}` ? "block" : "hidden"
         }`}
       >

@@ -2,8 +2,8 @@ import PropTypes from "prop-types";
 
 function ProductDetails({ product }) {
   return (
-    <div className="flex flex-col lg:flex-row items-center justify-center gap-20 bg-black lg:mr-10 xl:mr-20">
-      <img className="lg:w-1/2" src={product?.img} alt="" />
+    <div className="flex flex-col xl:flex-row items-center justify-center gap-20 bg-black pb-10 xl:pb-0 min-h-96">
+      <img className="xl:w-1/2 xl:min-h-96 object-cover" src={product?.img} alt="" />
       <div className="flex-1">
         <h4 className="text-white_bg text-3xl font-semibold">
           <span className="text-primary text-4xl">{product?.brand} </span> <span className="text-white text-base">({product?.category})</span> {" "}

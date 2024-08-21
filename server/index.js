@@ -176,11 +176,11 @@ app.get("/products", async (req, res) => {
 
 // Provide single product data using id
 app.get("/product/:id", async (req, res) => {
-  const userId = req.params.id;
+  const productId = req.params.id;
 
   try {
     // Checking if the product exists
-    const query = { _id: new ObjectId(userId) };
+    const query = { _id: new ObjectId(productId) };
     const result = await productCollections.findOne(query);
 
     if (!result) {

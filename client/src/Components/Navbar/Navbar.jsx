@@ -22,7 +22,7 @@ function Navbar() {
 
         <>
           {user ? (
-            <div className="hidden md:flex items-center gap-12">
+            <div className="hidden lg:flex items-center gap-12">
               <button>
                 <IoCartOutline className="text-3xl" />
               </button>
@@ -47,7 +47,7 @@ function Navbar() {
           )}
         </>
         {user && (
-          <button onClick={() => setIsOpen(!isOpen)} className="md:hidden">
+          <button onClick={() => setIsOpen(!isOpen)} className="lg:hidden">
             {isOpen ? (
               <AiOutlineClose className="text-3xl" />
             ) : (

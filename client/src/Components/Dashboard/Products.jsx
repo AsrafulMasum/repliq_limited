@@ -49,7 +49,7 @@ function Products() {
   }, [setProducts, data]);
 
   return (
-    <>
+    <div>
       <h2 className="text-2xl font-bold leading-10 capitalize text-black mb-10">
         All Products
       </h2>
@@ -139,7 +139,7 @@ function Products() {
           </div>
         )}
       </div>
-    </>
+    </div>
   );
 }
 
