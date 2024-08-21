@@ -4,7 +4,7 @@ function ProductDetails({ product }) {
   return (
     <div className="flex flex-col xl:flex-row items-center justify-center gap-20 bg-black pb-10 xl:pb-0 min-h-96">
       <img className="xl:w-1/2 xl:min-h-96 object-cover" src={product?.img} alt="" />
-      <div className="flex-1">
+      <div className="flex-1 px-4">
         <h4 className="text-white_bg text-3xl font-semibold">
           <span className="text-primary text-4xl">{product?.brand} </span> <span className="text-white text-base">({product?.category})</span> {" "}
           <br />

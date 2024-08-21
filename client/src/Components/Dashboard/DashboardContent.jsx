@@ -11,7 +11,7 @@ function DashboardContent() {
           <div className="bg-primary inline-block p-2 rounded">
             <GiMoneyStack className="text-5xl" />
           </div>
-          <p className="text-gray-600 text-lg">Total Sales</p>
+          <p className="text-gray-600 my-2">Total Sales</p>
           <h4 className="text-4xl text-primary">$ 11,785</h4>
         </div>
 
@@ -19,7 +19,7 @@ function DashboardContent() {
           <div className="bg-primary inline-block p-2 rounded">
             <IoBagCheck className="text-5xl" />
           </div>
-          <p className="text-gray-600 text-lg">Total Order</p>
+          <p className="text-gray-600 my-2">Total Order</p>
           <h4 className="text-4xl text-primary">11,70</h4>
         </div>
 
@@ -27,7 +27,7 @@ function DashboardContent() {
           <div className="bg-primary inline-block p-2 rounded">
             <FaUsers className="text-5xl" />
           </div>
-          <p className="text-gray-600 text-lg">Total Customer</p>
+          <p className="text-gray-600 my-2">Total Customer</p>
           <h4 className="text-4xl text-primary">778</h4>
         </div>
 
@@ -35,7 +35,7 @@ function DashboardContent() {
           <div className="bg-primary inline-block p-2 rounded">
             <GiMoneyStack className="text-5xl" />
           </div>
-          <p className="text-gray-600 text-lg">Total Expenses</p>
+          <p className="text-gray-600 my-2">Total Expenses</p>
           <h4 className="text-4xl text-primary">$ 4,700</h4>
         </div>
       </div>

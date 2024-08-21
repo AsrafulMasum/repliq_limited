@@ -1,6 +1,5 @@
 import { useContext, useState } from "react";
 import PrimaryButton from "../Buttons/PrimaryButton";
-import { IoCartOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import UserDropdown from "./UserDropdown";
@@ -23,10 +22,6 @@ function Navbar() {
         <>
           {user ? (
             <div className="hidden lg:flex items-center gap-12">
-              <button>
-                <IoCartOutline className="text-3xl" />
-              </button>
-
               <UserDropdown />
             </div>
           ) : (

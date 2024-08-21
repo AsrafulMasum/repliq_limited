@@ -5,6 +5,7 @@ import DashboardContent from "../Components/Dashboard/DashboardContent";
 import Products from "../Components/Dashboard/Products";
 import ProductDetails from "../Components/Dashboard/ProductDetails";
 import useLoadSecureData from "../Hooks/useLoadSecureData";
+import AddProduct from "../Components/Dashboard/AddProduct";
 
 function Dashboard() {
   const location = useLocation();
@@ -18,7 +19,7 @@ function Dashboard() {
   return (
     <div className="flex items-center overflow-hidden">
       {/* sidebar */}
-      <div className="min-h-screen min-w-48 w-80 bg-primary hidden lg:flex flex-col justify-between">
+      <div className="min-h-screen fixed top-0 min-w-48 w-80 bg-primary hidden lg:flex flex-col justify-between z-30">
         <ul className="flex flex-col justify-center pt-28">
           <li
             className={`text-lg font-medium py-5 pl-10 ${
@@ -63,7 +64,7 @@ function Dashboard() {
                 : "bg-transparent text-white_bg"
             }`}
           >
-            <Link to="/cart">Cart</Link>
+            <Link to="/addProduct">Add Product</Link>
           </li>
         </ul>
 
@@ -91,7 +92,7 @@ function Dashboard() {
       </div>
 
       <div
-        className={`mt-20 w-full xl:mx-10 ${
+        className={`mt-28 w-full lg:pl-80 xl:mx-10 ${
           location?.pathname === "/dashboard" ? "block" : "hidden"
         }`}
       >
@@ -99,7 +100,7 @@ function Dashboard() {
       </div>
 
       <div
-        className={`mt-28 w-full md:mx-10 xl:mx-20 ${
+        className={`flex justify-center items-center min-h-screen w-full lg:pl-80 px-4 md:mx-10 xl:mx-20 ${
           location?.pathname === "/products" ? "block" : "hidden"
         }`}
       >
@@ -107,11 +108,19 @@ function Dashboard() {
       </div>
 
       <div
-        className={`mt-28 md:mx-10 xl:mx-20 ${
+        className={`flex justify-center items-center min-h-screen w-full lg:pl-80 md:mx-10 xl:mx-20 ${
           location?.pathname === `/product/${id}` ? "block" : "hidden"
         }`}
       >
         <ProductDetails product={product} />
+      </div>
+
+      <div
+        className={`mt-40 w-full lg:pl-80 mx-10 xl:mx-20 pb-10 ${
+          location?.pathname === `/addProduct` ? "block" : "hidden"
+        }`}
+      >
+        <AddProduct />
       </div>
     </div>
   );

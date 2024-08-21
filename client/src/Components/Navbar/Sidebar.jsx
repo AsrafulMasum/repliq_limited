@@ -57,7 +57,7 @@ function Sidebar({ isOpen }) {
               : "bg-transparent text-white_bg"
           }`}
         >
-          <Link to="/cart">Cart</Link>
+          <Link to="/addProduct">Add Product</Link>
         </li>
       </ul>
 
