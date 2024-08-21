@@ -91,7 +91,7 @@ function Dashboard() {
       </div>
 
       <div
-        className={`mt-28 ${
+        className={`mt-28 w-full mr-10 xl:mr-20 ${
           location?.pathname === "/dashboard" ? "block" : "hidden"
         }`}
       >
@@ -99,7 +99,7 @@ function Dashboard() {
       </div>
 
       <div
-        className={`mt-28 ${
+        className={`mt-28 w-full ${
           location?.pathname === "/products" ? "block" : "hidden"
         }`}
       >
