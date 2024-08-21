@@ -58,7 +58,7 @@ function Products() {
           {/* head */}
           <thead>
             <tr>
-              <th className="hidden xl:block">Product ID</th>
+              <th>Product ID</th>
               <th>Product Image</th>
               <th>Product Name</th>
               <th>Category</th>
@@ -69,9 +69,9 @@ function Products() {
           </thead>
 
           <tbody>
-            {products?.slice(0, 5)?.map((product) => (
+            {products?.map((product) => (
               <tr key={product?._id}>
-                <th className="hidden xl:block">
+                <th>
                   <p>#{product?._id}</p>
                 </th>
                 <td>

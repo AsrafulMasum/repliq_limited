@@ -8,6 +8,7 @@ import useLoadSecureData from "../Hooks/useLoadSecureData";
 import AddProduct from "../Components/Dashboard/AddProduct";
 import Orders from "../Components/Dashboard/Orders";
 import OrderDetails from "../Components/Dashboard/OrderDetails";
+import Customers from "../Components/Dashboard/Customers";
 
 function Dashboard() {
   const location = useLocation();
@@ -143,6 +144,14 @@ function Dashboard() {
         }`}
       >
         <OrderDetails order={order} />
+      </div>
+
+      <div
+        className={`flex justify-center items-center min-h-screen w-full lg:pl-80 px-4 md:mx-10 xl:mx-20 ${
+          location?.pathname === "/customers" ? "block" : "hidden"
+        }`}
+      >
+        <Customers />
       </div>
     </div>
   );

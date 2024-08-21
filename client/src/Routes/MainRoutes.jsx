@@ -82,6 +82,14 @@ const MainRoutes = createBrowserRouter([
           </PrivateRoutes>
         ),
       },
+      {
+        path: "customers",
+        element: (
+          <PrivateRoutes>
+            <Dashboard />
+          </PrivateRoutes>
+        ),
+      },
     ],
   },
 ]);

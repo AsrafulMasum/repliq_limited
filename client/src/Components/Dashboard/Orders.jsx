@@ -59,7 +59,7 @@ function Orders() {
           {/* head */}
           <thead>
             <tr>
-              <th className="hidden xl:block">Order ID</th>
+              <th>Order ID</th>
               <th>Product Name</th>
               <th>Status</th>
               <th>Total</th>
@@ -70,9 +70,9 @@ function Orders() {
           </thead>
 
           <tbody>
-            {orders?.slice(0, 5)?.map((order) => (
+            {orders?.map((order) => (
               <tr key={order?._id}>
-                <th className="hidden xl:block">
+                <th>
                   <p>#{order?._id}</p>
                 </th>
                 <td>
