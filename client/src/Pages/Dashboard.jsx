@@ -6,6 +6,8 @@ import Products from "../Components/Dashboard/Products";
 import ProductDetails from "../Components/Dashboard/ProductDetails";
 import useLoadSecureData from "../Hooks/useLoadSecureData";
 import AddProduct from "../Components/Dashboard/AddProduct";
+import Orders from "../Components/Dashboard/Orders";
+import OrderDetails from "../Components/Dashboard/OrderDetails";
 
 function Dashboard() {
   const location = useLocation();
@@ -15,6 +17,10 @@ function Dashboard() {
   // Getting single product data
   const url = `/product/${id}`;
   const { data: product } = useLoadSecureData(url);
+
+  // Getting single product data
+  const orderUrl = `/order/${id}`;
+  const { data: order } = useLoadSecureData(orderUrl);
 
   return (
     <div className="flex items-center overflow-hidden">
@@ -121,6 +127,22 @@ function Dashboard() {
         }`}
       >
         <AddProduct />
+      </div>
+
+      <div
+        className={`flex justify-center items-center min-h-screen w-full lg:pl-80 px-4 md:mx-10 xl:mx-20 ${
+          location?.pathname === "/orders" ? "block" : "hidden"
+        }`}
+      >
+        <Orders />
+      </div>
+
+      <div
+        className={`flex justify-center items-center min-h-screen w-full lg:pl-80 md:mx-10 xl:mx-20 ${
+          location?.pathname === `/order/${id}` ? "block" : "hidden"
+        }`}
+      >
+        <OrderDetails order={order} />
       </div>
     </div>
   );

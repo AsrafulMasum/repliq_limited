@@ -10,12 +10,16 @@ const cors = require("cors");
 
 const port = process.env.PORT || 5000;
 
-app.use(
-  cors({
-    origin: ["http://localhost:5173"],
-    credentials: true,
-  })
-);
+const corsConfig = {
+  origin: [
+    "http://localhost:5173",
+    "https://celadon-marshmallow-12da66.netlify.app",
+  ],
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "DELETE"],
+};
+app.use(cors(corsConfig));
+app.options("", cors(corsConfig));
 app.use(express.json());
 app.use(cookieParser());
 
@@ -28,6 +32,21 @@ const client = new MongoClient(uri, {
     deprecationErrors: true,
   },
 });
+
+// jwt middleware
+const verifyCookie = (req, res, next) => {
+  const token = req.cookies.token;
+  if (!token) {
+    return res.status(401).send({ message: "Unauthorized Access" });
+  }
+  jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, decoded) => {
+    if (err) {
+      return res.status(401).send({ message: "Unauthorized Access" });
+    }
+    req.user = decoded;
+    next();
+  });
+};
 
 // mongodb connection
 const dbConnect = async () => {
@@ -43,6 +62,8 @@ dbConnect();
 const database = client.db("TrendifyDB");
 const usersCollections = database.collection("usersDB");
 const productCollections = database.collection("productsDB");
+const orderCollections = database.collection("ordersDB");
+const customerCollections = database.collection("customersDB");
 
 app.get("/", (req, res) => {
   res.send("server is running data will be appear soon...");
@@ -150,13 +171,13 @@ app.get("/user/:id", async (req, res) => {
     const result = await usersCollections.findOne(query);
 
     if (!result) {
-      return res.status(404).json({ message: "User not found" });
+      return res.status(404).json({ message: "User not found!" });
     }
 
     res.status(200).json(result);
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: "Internal Server Error" });
+    res.status(500).json({ message: "Internal Server Error!" });
   }
 });
 
@@ -170,7 +191,7 @@ app.get("/products", async (req, res) => {
     console.error(error);
     res
       .status(500)
-      .json({ error: "An error occurred while fetching products" });
+      .json({ error: "An error occurred while fetching products!" });
   }
 });
 
@@ -184,13 +205,108 @@ app.get("/product/:id", async (req, res) => {
     const result = await productCollections.findOne(query);
 
     if (!result) {
-      return res.status(404).json({ message: "Product not found" });
+      return res.status(404).json({ message: "Product not found!" });
     }
 
     res.status(200).json(result);
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: "Internal Server Error" });
+    res.status(500).json({ message: "Internal Server Error!" });
+  }
+});
+
+// Inserting a product data
+app.post("/addProduct", async (req, res) => {
+  try {
+    const {
+      name,
+      description,
+      price,
+      category,
+      stock,
+      brand,
+      rating,
+      img,
+      tags,
+    } = req.body;
+
+    if (!name || !price || !category || !stock) {
+      return res
+        .status(400)
+        .send("Name, price, category, and stock are required fields.");
+    }
+
+    const newProduct = {
+      name,
+      description,
+      price,
+      category,
+      stock,
+      brand,
+      rating,
+      img,
+      tags,
+    };
+
+    const result = await productCollections.insertOne(newProduct);
+
+    res
+      .status(201)
+      .send({
+        message: "Product added successfully.",
+        productId: result.insertedId,
+      });
+  } catch (error) {
+    console.error("Error adding product:", error);
+    res.status(500).send("Internal Server Error!");
+  }
+});
+
+// Provide orders data route
+app.get("/orders", async (req, res) => {
+  try {
+    // Fetch all products from the collection
+    const orders = await orderCollections.find().toArray();
+    res.status(200).json(orders);
+  } catch (error) {
+    console.error(error);
+    res
+      .status(500)
+      .json({ error: "An error occurred while fetching orders!" });
+  }
+});
+
+// Provide single order data using id
+app.get("/order/:id", async (req, res) => {
+  const productId = req.params.id;
+
+  try {
+    // Checking if the product exists
+    const query = { _id: new ObjectId(productId) };
+    const result = await orderCollections.findOne(query);
+
+    if (!result) {
+      return res.status(404).json({ message: "Product not found!" });
+    }
+
+    res.status(200).json(result);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Internal Server Error!" });
+  }
+});
+
+// Provide customers data route
+app.get("/customers", async (req, res) => {
+  try {
+    // Fetch all products from the collection
+    const customers = await customerCollections.find().toArray();
+    res.status(200).json(customers);
+  } catch (error) {
+    console.error(error);
+    res
+      .status(500)
+      .json({ error: "An error occurred while fetching customers!" });
   }
 });
 

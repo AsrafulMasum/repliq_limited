@@ -66,6 +66,22 @@ const MainRoutes = createBrowserRouter([
           </PrivateRoutes>
         ),
       },
+      {
+        path: "orders",
+        element: (
+          <PrivateRoutes>
+            <Dashboard />
+          </PrivateRoutes>
+        ),
+      },
+      {
+        path: "order/:id",
+        element: (
+          <PrivateRoutes>
+            <Dashboard />
+          </PrivateRoutes>
+        ),
+      },
     ],
   },
 ]);
