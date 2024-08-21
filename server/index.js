@@ -174,6 +174,26 @@ app.get("/products", async (req, res) => {
   }
 });
 
+// Provide single product data using id
+app.get("/product/:id", async (req, res) => {
+  const userId = req.params.id;
+
+  try {
+    // Checking if the product exists
+    const query = { _id: new ObjectId(userId) };
+    const result = await productCollections.findOne(query);
+
+    if (!result) {
+      return res.status(404).json({ message: "Product not found" });
+    }
+
+    res.status(200).json(result);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Internal Server Error" });
+  }
+});
+
 // Handling error for invalid url
 app.all("*", (req, res, next) => {
   const err = new Error(`The requested url is invalid [${req.url}].`);

@@ -1,9 +1,53 @@
+import { Link } from "react-router-dom";
 import useLoadSecureData from "../../Hooks/useLoadSecureData";
+import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from "react-icons/md";
+import { useEffect, useState } from "react";
 
 function Products() {
   const url = "/products";
-  const { data: products } = useLoadSecureData(url);
-  console.log(products);
+  const { data } = useLoadSecureData(url);
+  const [products, setProducts] = useState([]);
+  const [page1, setPage1] = useState(true);
+  const [page2, setPage2] = useState(false);
+  const [page3, setPage3] = useState(false);
+  const [page4, setPage4] = useState(false);
+
+  const handlePageNext = () => {
+    if (page1) {
+      setPage1(false);
+      setPage2(true);
+      setProducts(data?.slice(5, 10));
+    } else if (page2) {
+      setPage2(false);
+      setPage3(true);
+      setProducts(data?.slice(10, 15));
+    } else if (page3) {
+      setPage3(false);
+      setPage4(true);
+      setProducts(data?.slice(15, 20));
+    }
+  };
+
+  const handlePagePrevious = () => {
+    if (page2) {
+      setPage2(false);
+      setPage1(true);
+      setProducts(data?.slice(0, 5));
+    } else if (page3) {
+      setPage3(false);
+      setPage2(true);
+      setProducts(data?.slice(5, 10));
+    } else if (page4) {
+      setPage4(false);
+      setPage3(true);
+      setProducts(data?.slice(10, 15));
+    }
+  };
+
+  useEffect(() => {
+    setProducts(data?.slice(0, 5));
+  }, [setProducts, data]);
+
   return (
     <>
       <h2 className="text-2xl font-bold leading-10 capitalize text-black mb-10">
@@ -43,16 +87,12 @@ function Products() {
                   </div>
                 </td>
                 <td>
-                  <div className="font-bold">{product?.name}</div>
-                  <div className="text-sm opacity-50">{product?.brand}</div>
+                  <p className="font-bold">{product?.name}</p>
+                  <p className="text-sm opacity-50">{product?.brand}</p>
                 </td>
                 <td>
                   <p className="flex gap-2 flex-wrap">
-                    {product?.tags?.map((tag, idx) => (
-                      <span className="capitalize" key={idx}>
-                        {tag}
-                      </span>
-                    ))}
+                    {product?.tags?.join(", ")}
                   </p>
                   <br />
                   <span className="badge badge-ghost badge-sm">
@@ -62,12 +102,42 @@ function Products() {
                 <td>$ {product?.price}</td>
                 <td>{product?.stock}</td>
                 <th>
-                  <button className="btn btn-ghost btn-xs">details</button>
+                  <Link
+                    to={`/product/${product?._id}`}
+                    className="btn btn-ghost btn-xs"
+                  >
+                    details
+                  </Link>
                 </th>
               </tr>
             ))}
           </tbody>
         </table>
+      </div>
+
+      <div className="flex items-center justify-between">
+        {!page1 && (
+          <div className="w-full flex items-center">
+            <button
+              onClick={handlePagePrevious}
+              className="flex justify-center items-center gap-2 bg-gray-300 py-2 px-4 rounded text-xl"
+            >
+              <MdKeyboardArrowLeft />
+              <span>Previous</span>
+            </button>
+          </div>
+        )}
+        {!page4 && (
+          <div className="w-full flex justify-end items-center">
+            <button
+              onClick={handlePageNext}
+              className="flex justify-center items-center gap-2 bg-gray-300 py-2 px-4 rounded text-xl"
+            >
+              <span>Next</span>
+              <MdKeyboardArrowRight />
+            </button>
+          </div>
+        )}
       </div>
     </>
   );

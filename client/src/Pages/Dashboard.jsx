@@ -1,12 +1,19 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import DashboardContent from "../Components/Dashboard/DashboardContent";
 import Products from "../Components/Dashboard/Products";
+import ProductDetails from "../Components/Dashboard/ProductDetails";
+import useLoadSecureData from "../Hooks/useLoadSecureData";
 
 function Dashboard() {
   const location = useLocation();
+  const { id } = useParams();
   const { handleLogout } = useContext(AuthContext);
+
+  // Getting single product data
+  const url = `/product/${id}`;
+  const { data: product } = useLoadSecureData(url);
 
   return (
     <div className="flex items-center gap-10 xl:gap-20 overflow-hidden">
@@ -97,6 +104,14 @@ function Dashboard() {
         }`}
       >
         <Products />
+      </div>
+
+      <div
+        className={`mt-28 ${
+          location?.pathname === `/product/${id}` ? "block" : "hidden"
+        }`}
+      >
+        <ProductDetails product={product} />
       </div>
     </div>
   );
