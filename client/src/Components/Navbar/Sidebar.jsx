@@ -10,7 +10,7 @@ function Sidebar({ isOpen }) {
   return (
     <div
       className={`min-h-screen w-80 bg-primary absolute top-0 duration-1000 ease-in-out flex flex-col justify-between ${
-        isOpen & user ? "left-0" : "-left-96"
+        isOpen ? user ? "left-0" : "-left-96" : "-left-96"
       }`}
     >
       <ul className="flex flex-col justify-center pt-7">

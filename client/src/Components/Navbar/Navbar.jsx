@@ -22,19 +22,12 @@ function Navbar() {
 
         <>
           {user ? (
-            <div className="flex items-center gap-12 ">
+            <div className="hidden md:flex items-center gap-12">
               <button>
                 <IoCartOutline className="text-3xl" />
               </button>
 
               <UserDropdown />
-              <button onClick={() => setIsOpen(!isOpen)} className="md:hidden">
-                {isOpen ? (
-                  <AiOutlineClose className="text-3xl" />
-                ) : (
-                  <AiOutlineMenuFold className="text-3xl" />
-                )}
-              </button>
             </div>
           ) : (
             <div className="flex items-center gap-5">

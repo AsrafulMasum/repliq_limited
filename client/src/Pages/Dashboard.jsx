@@ -9,7 +9,7 @@ function Dashboard() {
   const { handleLogout } = useContext(AuthContext);
 
   return (
-    <div className="flex items-center gap-20">
+    <div className="flex items-center gap-10 xl:gap-20 overflow-hidden">
       {/* sidebar */}
       <div className="min-h-screen w-80 bg-primary hidden md:flex flex-col justify-between">
         <ul className="flex flex-col justify-center pt-28">
@@ -84,14 +84,15 @@ function Dashboard() {
       </div>
 
       <div
-        className={`${
+        className={`mt-28 ${
           location?.pathname === "/dashboard" ? "block" : "hidden"
         }`}
       >
         <DashboardContent />
       </div>
+
       <div
-        className={`${
+        className={`mt-28 ${
           location?.pathname === "/products" ? "block" : "hidden"
         }`}
       >

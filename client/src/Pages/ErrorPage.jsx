@@ -1,5 +1,5 @@
 import { NavLink, useRouteError } from "react-router-dom";
-import animationData from "../../public/404.json";
+import animationData from "../assets/404.json";
 import Lottie from "lottie-react";
 
 const ErrorPage = () => {
